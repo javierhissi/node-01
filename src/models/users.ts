@@ -1,4 +1,4 @@
-import { DataTypes, Model, Optional, Sequelize } from "sequelize";
+import { DataTypes, Model, Optional, Sequelize } from 'sequelize';
 
 interface UserModelAttributeType {
   user_id: number;
@@ -6,20 +6,15 @@ interface UserModelAttributeType {
   passwd: string;
   dob: Date;
 }
-type UserCreationAttributes = Optional<UserModelAttributeType, "user_id">;
+type UserCreationAttributes = Optional<UserModelAttributeType, 'user_id'>;
 
-export type UserModelType = Model<
-  UserModelAttributeType,
-  UserCreationAttributes
->;
+export type UserModelType = Model<UserModelAttributeType, UserCreationAttributes>;
 
 /// create models
-export const createModels = async (
-  sequelize: Sequelize
-): Promise<UserModelType> =>
-  await sequelize
+export const createModels = async (sequelize: Sequelize): Promise<UserModelType> =>
+  sequelize
     .define<UserModelType>(
-      "user",
+      'user',
       {
         user_id: {
           type: DataTypes.INTEGER,
@@ -43,7 +38,7 @@ export const createModels = async (
         freezeTableName: true,
         // remove this if I want createdAt & updatedAt by default
         timestamps: false,
-        initialAutoIncrement: "10",
+        initialAutoIncrement: '10',
       }
     )
     .sync({ alter: true });
