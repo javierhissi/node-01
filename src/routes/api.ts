@@ -1,7 +1,7 @@
 import { Router } from "express";
+import peronRoutes from "./person";
 
-// Export the base-router
-const baseRouter = Router();
+const router = Router();
+router.use(peronRoutes());
 
-// Export default.
-export default baseRouter;
+export default router;
