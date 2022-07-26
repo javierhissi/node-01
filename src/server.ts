@@ -2,7 +2,7 @@ import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
-import algo from "./ts-test/uno";
+// import algo from "./ts-test/uno";
 
 import express, { Request, Response } from "express";
 import "express-async-errors";
@@ -55,7 +55,7 @@ app.get("*", (_: Request, res: Response) => {
   res.sendFile("index.html", { root: viewsDir });
 });
 
-algo();
+// algo();
 
 // Export here and start in a diff file (for testing).
 export default app;

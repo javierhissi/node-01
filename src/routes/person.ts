@@ -30,6 +30,7 @@ export default (): Router => {
   baseRouter.get(
     "/personas",
     (req: Request, res: Response, next: NextFunction) => {
+      debugger;
       res.status(200).json(personas);
     }
   );
