@@ -27,7 +27,8 @@
     "@shared": "dist/shared",
     "@server": "dist/server",
     "@routes": "dist/routes",
-    "@db": "dist/db"
+    "@db": "dist/db",
+    "@models": "dist/models"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -64,6 +65,7 @@
     "build.ts"
   ],
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "command-line-args": "^5.2.1",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
@@ -80,6 +82,7 @@
     "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/command-line-args": "^5.2.0",
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.13",
@@ -96,11 +99,11 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.0",
-    "prettier": "^2.3.2",
     "find": "^0.3.0",
     "fs-extra": "^10.1.0",
     "jasmine": "^4.2.0",
     "nodemon": "^2.0.16",
+    "prettier": "^2.3.2",
     "supertest": "^6.2.3",
     "ts-node": "^10.8.1",
     "tsconfig-paths": "^4.0.0",
